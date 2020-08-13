@@ -60,7 +60,7 @@ export function PendulumnBall(name) {
 
 	function applyTension() {
 		var tensionValue = gravity.length() * position.y / ropeLength
-		var centripetalValue = Math.pow(velocity.length(), 2) / ropeLength
+		var centripetalValue = Math.pow(velocity.length(), 2) / ropeLength * mass
 		var tension = anchorPoint.substract(position).unit().multiply(tensionValue + centripetalValue)
 		applyForce(tension)
 		drawLine(position, tension, scalingFactor)
@@ -76,6 +76,7 @@ export function PendulumnBall(name) {
 		position = position.add(velocity.multiply(dt))
 		drawLine(position, force, scalingFactor)
 		drawLine(position, acceleration, scalingFactor)
+		ropeLength = position.substract(anchorPoint).length()
 	}
 
 	function checkCollision() {
