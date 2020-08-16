@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			* {
+			  box-sizing: border-box;
+			}
+
+			.column {
+			  float: left;
+			  width: 33.33%;
+			  padding: 5px;
+			}
+
+			/* Clearfix (clear floats) */
+			.row::after {
+			  content: "";
+			  clear: both;
+			  display: table;
+			}			
+			* { padding: 0; margin: 0; }
+			canvas { background: #eee; display: block; margin: 0 auto; }
+			.wrapper {
+			    position:relative;
+			}
+			.wrapper > canvas,
+			.wrapper > input {
+			    position:absolute;
+			    left:0;
+			    top:0;
+			}
+			.wrapper > input {
+			    right:10px;    /* places the slider */
+			    top:10px;
+			}
+			</style>
+		<meta charset="utf=8" />
+		<title>Inverse Kinematics</title>
+	</head>
+	<body>
+		<center>
+			<div class="wrapper">
+				<canvas id="ik" width="800" height="800"></canvas>
+				<input type="range" min="1" max="100" value="50" class="slider" id="arm1">
+				<input type="range" min="1" max="100" value="50" class="slider" id="arm2" style="margin-top:35px">
+				<input type="range" min="1" max="100" value="50" class="slider" id="arm3" style="margin-top:70px">
+			</div>
+		</center>
+		<script type="module" src="../js/ik/ik.js"> </script>
+	</body>
+</html>

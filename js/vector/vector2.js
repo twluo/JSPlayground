@@ -45,5 +45,10 @@ Vector2.prototype = {
 	init: function(x, y) {
 		this.x = x; this.y = y;
 		return this
+	},
+	rotate: function(theta) {
+		var newX = this.x * Math.cos(theta) - this.y * Math.sin(theta);
+		var newY = this.x * Math.sin(theta) + this.y * Math.cos(theta);
+		return new Vector2(newX, newY)
 	}
 }
