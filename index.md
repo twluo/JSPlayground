@@ -7,9 +7,9 @@ Random place to test random JS experiments.
 ### Balls
 Experiment with balls....
 
-[Balls](JSPlayground/balls/)
+[Balls](balls/)
 
 ### IK
 2d Inverse Kinematics....
 
-[IK](JSPlayground/ik/)
+[IK](ik/)
